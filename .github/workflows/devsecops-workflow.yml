@@ -18,6 +18,7 @@ jobs:
 
   test-job:
     runs-on: ubuntu-latest
+    needs: build-job # for ordering 
     steps:
       - name: test step 3
         run: echo "test Step 3"
