@@ -28,6 +28,7 @@ jobs:
 
   provision-job:
     runs-on: ubuntu-latest
+    needs: test-job
     steps:
       - name: provision step 5
         run: echo "provision Step 5"
@@ -37,6 +38,7 @@ jobs:
 
   deploy-job:
     runs-on: ubuntu-latest
+    needs: provision-job
     steps:
       - name: deploy step 7
         run: echo "deploy Step 7"
@@ -46,6 +48,7 @@ jobs:
         
   monitor-job:
     runs-on: ubuntu-latest
+    needs: deploy-job
     steps:
       - name: monitor step 9
         run: echo "monitor Step 9"
