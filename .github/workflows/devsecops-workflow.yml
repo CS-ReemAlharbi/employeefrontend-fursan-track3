@@ -1,0 +1,17 @@
+name: Employeefrontend DevSecops Workflow 
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build step 1
+        run: echo "build Step 1"
+      
+      - name: build step 2
+        run: echo "build Step   2"
