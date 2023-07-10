@@ -21,7 +21,7 @@ sonarcloud-scan:
     - name: Step3 Install Dependencies
       run: npm install
 
-    - name: Step4 SonarCloud Scan
+    - name: Step4 SonarCloud    Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
