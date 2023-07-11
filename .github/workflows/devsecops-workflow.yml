@@ -15,7 +15,7 @@ jobs:
       - name: Step2 Install Node.js
         uses: actions/setup-node@v3.7.0
         with:
-          node-version: "18.16.1"
+          node-version: '18.16.1'
 
       - name: Step3 Install Dependencies
         run: npm install
@@ -36,9 +36,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step1 Download the Source Code
-        uses: actions/checkout@3.5.3
+        uses: actions/checkout@v3.5.3
+
+
+      - name: Step2 Install Node.js
+        uses: actionssetup-node@v3.7.0
+
         with:
-          node-version: "18.16.1"
+          node-version: '18.16.1'
+
       - name: Step3 Install Dependencies
         uses: npm install
 
@@ -46,7 +52,7 @@ jobs:
         run: npm audit --json > npm-aduit-results.json
         continue-on-error: true
 
-      - name: Step4 NPM Aduit Scan and Generate Report in JSON Format
+      - name: Step5 Upload NPM Audit Scan Report to GitHub
         uses: actions/upload-artifact@v3
         with:
           name: npm-audit-results
