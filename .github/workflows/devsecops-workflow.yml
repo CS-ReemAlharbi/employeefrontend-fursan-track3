@@ -31,3 +31,22 @@ jobs:
             -Dsonar.projectKey=reem-alharbi_employeefrontend-fursan-track3
             -Dsonar.sources=.
             -Dsonar.host.url=https://sonarcloud.io
+  npm-audit-scan-job:
+    name: NPM Audit Scan for Vulnerabilities
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step1 Download the Source Code
+        uses: actions/checkout@3.5.3
+        with:
+          node-version: '18.16.1'
+      - name: Step3 Install Dependencies
+        uses: npm install 
+
+      - name: Step4 NPM Aduit Scan and Generate Report in JSON Format
+        run: npm audit --json > npm-aduit-results.json
+
+      - name: Step4 NPM Aduit Scan and Generate Report in JSON Format
+        uses: actions/upload-artifact@v3
+        with:
+          - name: npm-audit-results
+           path: npm-audit-results.json
