@@ -9,7 +9,7 @@ variables:
 
 
 sonarcloud-check:
-  stage: stage1
+  stage: stage1  
   image:
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
