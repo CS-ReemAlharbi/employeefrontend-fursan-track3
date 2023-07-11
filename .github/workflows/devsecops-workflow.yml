@@ -46,7 +46,7 @@ jobs:
           node-version: '18.16.1'
 
       - name: Step3 Install Dependencies
-        uses: npm install
+        run: npm install
 
       - name: Step4 NPM Aduit Scan and Generate Report in JSON Format
         run: npm audit --json > npm-aduit-results.json
